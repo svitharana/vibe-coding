@@ -15,17 +15,22 @@ def main():
             # Calculate average
             average = (maths + science + english) / 3
             
-            # Display results
-            print(f"Average Marks: {average:.2f}")
-            
+            # Determine grade/result
             if average >= 75:
-                print("Grade: A")
+                result = "A"
             elif average >= 60:
-                print("Grade: B")
+                result = "B"
             elif average >= 40:
-                print("Grade: C")
+                result = "C"
             else:
-                print("Result: Fail")
+                result = "Fail"
+
+            # Display results
+            print("-" * 24)
+            print(f"Name: {name}")
+            print(f"Average: {average:.1f}")
+            print(f"Grade: {result}")
+            print("-" * 24)
                 
         except ValueError:
             print("Error: Please enter valid numerical marks.")
