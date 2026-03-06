@@ -3,11 +3,18 @@ def main():
         # Get total monthly budget
         total_budget = float(input("Enter your total monthly budget (LKR): "))
 
-        # Get 3 expenses
+        # Get multiple expenses
         expenses = []
-        for i in range(1, 4):
-            expense = float(input(f"Enter expense {i} (LKR): "))
-            expenses.append(expense)
+        print("\nEnter your expenses one by one. Type 'done' to finish.")
+        while True:
+            user_input = input("Enter expense amount (LKR) or 'done': ").lower()
+            if user_input == "done":
+                break
+            try:
+                expense = float(user_input)
+                expenses.append(expense)
+            except ValueError:
+                print("Invalid input. Please enter a number or 'done'.")
 
         # Calculate sum of expenses
         total_expenses = sum(expenses)
